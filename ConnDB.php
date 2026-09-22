@@ -9,7 +9,7 @@ conn = null;
         $this->port = getenv('MYSQLPORT') ?: '3306';
 
         try {
-            \(dsn = "mysql:host=" .\)this->host
+            $dsn = "mysql:host=" . $this->host
                  . ";port=" . $this->port
                  . ";dbname=" . $this->db_name
                  . ";charset=utf8mb4";
