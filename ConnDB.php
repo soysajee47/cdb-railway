@@ -1,17 +1,7 @@
 <?php
-class Database
-{
-    private $host;
-    private $db_name;
-    private $username;
-    private $password;
-    private $port;
-    private $conn;
+conn = null;
 
-    public function getConnection()
-    {
-        $this->conn = null;
-
+        // ดึงค่าเชื่อมต่อจาก Railway Environment Variables
         $this->host = getenv('MYSQLHOST') ?: 'localhost';
         $this->db_name = getenv('MYSQLDATABASE') ?: 'cdb';
         $this->username = getenv('MYSQLUSER') ?: 'root';
@@ -19,7 +9,7 @@ class Database
         $this->port = getenv('MYSQLPORT') ?: '3306';
 
         try {
-            $dsn = "mysql:host=" . $this->host
+            \(dsn = "mysql:host=" .\)this->host
                  . ";port=" . $this->port
                  . ";dbname=" . $this->db_name
                  . ";charset=utf8mb4";
@@ -36,14 +26,11 @@ class Database
             );
 
         } catch (PDOException $exception) {
-
             header("Content-Type: application/json");
-
             echo json_encode([
                 "status" => "error",
                 "message" => "Connection error: " . $exception->getMessage()
             ]);
-
             exit;
         }
 
