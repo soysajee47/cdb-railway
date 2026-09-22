@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Product Management</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Product Management</h1>
+
+        <!-- Search -->
+        <div class="search-box">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="ค้นหาชื่อสินค้า..."
+            >
+
+            <button onclick="searchProducts()">
+                ค้นหา
+            </button>
+
+            <button onclick="loadProducts()">
+                แสดงทั้งหมด
+            </button>
+
+            <button class="add-btn" onclick="openAddForm()">
+                + เพิ่มสินค้า
+            </button>
+        </div>
+
+        <!-- Form -->
+        <div id="productForm" class="form-box">
+
+            <h2 id="formTitle">เพิ่มสินค้า</h2>
+
+            <input type="hidden" id="productId">
+
+            <label>ชื่อสินค้า</label>
+            <input type="text" id="productName">
+
+            <label>Supplier ID</label>
+            <input type="number" id="supplierId">
+
+            <label>Category ID</label>
+            <input type="number" id="categoryId">
+
+            <label>หน่วยสินค้า</label>
+            <input type="text" id="unit">
+
+            <label>ราคา</label>
+            <input type="number" id="price" step="0.01">
+
+            <div class="form-buttons">
+                <button onclick="saveProduct()">
+                    บันทึก
+                </button>
+
+                <button onclick="closeForm()">
+                    ยกเลิก
+                </button>
+            </div>
+
+        </div>
+
+        <!-- Product Table -->
+        <table>
+
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>ชื่อสินค้า</th>
+                    <th>Supplier ID</th>
+                    <th>Category ID</th>
+                    <th>หน่วย</th>
+                    <th>ราคา</th>
+                    <th>จัดการ</th>
+                </tr>
+            </thead>
+
+            <tbody id="productTable">
+                <!-- JavaScript จะนำข้อมูลมาใส่ตรงนี้ -->
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
