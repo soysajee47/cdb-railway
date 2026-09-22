@@ -1,5 +1,5 @@
 
-const API_URL = "../api/products";
+const API_URL = "/api/index.php";
 
 // โหลดข้อมูลเมื่อเปิดหน้าเว็บ
 document.addEventListener("DOMContentLoaded", function () {
